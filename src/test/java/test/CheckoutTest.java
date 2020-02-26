@@ -1,16 +1,16 @@
 package test;
 
+import com.firestarters.steps.*;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import com.firestarters.steps.*;
 
 @RunWith(SerenityRunner.class)
 public class CheckoutTest extends BaseTest {
 
     @Steps
-    HomePageSteps homePageSteps;
+    HeaderSteps headerSteps;
 
     @Steps
     ProductPageSteps productPageSteps;
@@ -29,7 +29,7 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     public void checkoutTest(){
-        homePageSteps.goToProductsPage();
+        headerSteps.goToProductsPage();
         productPageSteps.selectAProduct();
         productDetailsSteps.configureProductAndAddToCart();
         searchPageSteps.addProductFromSearch();

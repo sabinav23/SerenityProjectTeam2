@@ -2,73 +2,74 @@ package test;
 
 
 
+import com.firestarters.steps.HeaderSteps;
+import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import com.firestarters.steps.HomePageSteps;
 
 @RunWith(SerenityRunner.class)
 public class HomePageTest extends BaseTest {
 
    @Steps
-    HomePageSteps homePageSteps;
+   HeaderSteps headerSteps;
 
 
    @Test
     public void checkTitleTest(){
-        homePageSteps.appearsOnHomepage();
+        headerSteps.appearsOnHomepage();
     }
 
     @Test
     public void checkURL(){
-       homePageSteps.isTheCorrectURL();
+       headerSteps.isTheCorrectURL();
     }
 
     @Test
     public void logoIsDisplayed(){
-       homePageSteps.logoIsDisplayed();
+       headerSteps.logoIsDisplayed();
     }
 
     @Test
     public void clickOnLogo(){
-       homePageSteps.clickOnLogo();
+       headerSteps.clickOnLogo();
     }
 
     @Test
     public void navigateBack(){
-       homePageSteps.navigateBack();
+       headerSteps.navigateBack();
     }
 
     @Test
     public void clickOnAccount(){
-       homePageSteps.clickOnAccountButton();
+       headerSteps.clickOnAccountButton();
     }
 
     @Test
     public void checkAccountDropDown(){
-       homePageSteps.isAccountDropDownDIsplayed();
+       headerSteps.isAccountDropDownDIsplayed();
     }
 
     @Test
     public void checkAccountTextIsCorrect(){
-       homePageSteps.checkAccountText();
+       headerSteps.checkAccountText();
     }
 
     @Test
     public void checkTheNumberOfLanguages(){
-       homePageSteps.verifyTheNumberOfLanguages();
+       headerSteps.verifyTheNumberOfLanguages();
 
     }
 
     @Test
     public void newLanguageIsSelected(){
-       homePageSteps.selectTheNewLanguage();
+       headerSteps.selectTheNewLanguage();
 
     }
 
     @Test
     public void clearSearchField() {
-        homePageSteps.clearsSearchField();
+        headerSteps.clearsSearchField();
     }
 
     String word = "DRESS";
