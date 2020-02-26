@@ -29,7 +29,11 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     public void checkoutTest(){
+<<<<<<< HEAD
         headerSteps.goToProductsPage();
+=======
+        //homePageSteps.goToProductsPage();
+>>>>>>> 056d19bff6c4427d993fa1f3733ef496c0053840
         productPageSteps.selectAProduct();
         productDetailsSteps.configureProductAndAddToCart();
         searchPageSteps.addProductFromSearch();
