@@ -5,10 +5,12 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.springframework.util.Assert;
 
 import java.time.Duration;
 
 import static org.junit.Assert.assertTrue;
+
 
 public class CheckoutPage extends  AbstractPage {
 
@@ -130,5 +132,6 @@ public class CheckoutPage extends  AbstractPage {
         placeOrderButton.click();
         withTimeoutOf(Duration.ofSeconds(10));
         assertTrue(checkoutPageTitle.isDisplayed());
+
     }
 }
