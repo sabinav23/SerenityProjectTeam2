@@ -50,6 +50,11 @@ public class HeaderPage extends AbstractPage {
     @FindBy (css = " #search " )
     private WebElementFacade searchField;
 
+    @FindBy ( css = " .page-title h1 ")
+    private WebElementFacade searchTitle;
+
+
+
 
     public WebElementFacade getLogo() {
         return logo;
@@ -81,11 +86,16 @@ public class HeaderPage extends AbstractPage {
         Assert.assertTrue( searchField.getText().isEmpty());
     }
 
-    public void fillSearchField(String word){
-        searchField.sendKeys(word);
+    public void fillAndSubmitSearchField() {
+        searchField.sendKeys("dress");
         searchField.submit();
-
     }
+
+    public String getSearchTitle() {
+        return searchTitle.getText();
+     }
+
+
 
     public void navigateToAProductSubcategory(){
         Actions action = new Actions(getDriver());

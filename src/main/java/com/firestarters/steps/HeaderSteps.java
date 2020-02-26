@@ -75,6 +75,8 @@ public class HeaderSteps {
 
     @Step
     public void submitsInSearch(){
+        headerPage.fillAndSubmitSearchField();
+        Assert.assertTrue(headerPage.getSearchTitle().contains("DRESS"));
 
     }
 }
