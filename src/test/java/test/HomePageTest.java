@@ -7,6 +7,13 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+<<<<<<< HEAD
+=======
+import com.firestarters.steps.HomePageSteps;
+import net.serenitybdd.junit.runners.SerenityRunner;
+
+
+>>>>>>> 056d19bff6c4427d993fa1f3733ef496c0053840
 
 @RunWith(SerenityRunner.class)
 public class HomePageTest extends BaseTest {
