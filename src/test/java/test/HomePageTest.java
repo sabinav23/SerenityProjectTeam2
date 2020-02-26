@@ -6,6 +6,9 @@ import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import com.firestarters.steps.HomePageSteps;
+import net.serenitybdd.junit.runners.SerenityRunner;
+
+
 
 @RunWith(SerenityRunner.class)
 public class HomePageTest extends BaseTest {
