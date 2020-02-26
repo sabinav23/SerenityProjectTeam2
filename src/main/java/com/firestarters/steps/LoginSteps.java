@@ -5,7 +5,9 @@ import com.firestarters.models.User;
 import com.firestarters.page.HeaderPage;
 import com.firestarters.page.LoginPage;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
+import static com.firestarters.utils.Utils.getRandomString;
 
 
 public class LoginSteps {
@@ -26,6 +28,34 @@ public class LoginSteps {
         user.setPass("");
         return user;
 
+    }
+    @Step
+    public User generateUserWithEmptyEmailAndWrongPass(){
+        User user=new User();
+        user.setEmail("");
+        user.setPass(getRandomString());
+        return user;
+    }
+    @Step
+    public User generateUserWithEmptyEmailAndGoodPass(){
+        User user=new User();
+        user.setEmail("");
+        user.setPass("manolachiioana");
+        return user;
+    }
+    @Step
+    public User generateUserWithEmptyPassAndWrongEmail(){
+        User user=new User();
+        user.setEmail(getRandomString()+"@gmail.com");
+        user.setPass("");
+        return user;
+    }
+    @Step
+    public User generateUserWithEmptyPassAndGoodEmail(){
+        User user=new User();
+        user.setEmail("manolachi_ioana@gmail.com");
+        user.setPass("");
+        return user;
     }
     //---------------------------------------
     @Step
@@ -54,6 +84,26 @@ public class LoginSteps {
         fillLoginData(generateEmptyUser());
         clickLogin();
     }
+    @Step
+    public void loginUserWithEmptyEmailAndWrongPass(){
+        fillLoginData(generateUserWithEmptyEmailAndWrongPass());
+        clickLogin();
+    }
+    @Step
+    public void loginUserWithEmptyEmailAndGoodPass(){
+        fillLoginData(generateUserWithEmptyEmailAndGoodPass());
+        clickLogin();
+    }
+    @Step
+    public void loginUserWithEmptyPassAndWrongEmail(){
+        fillLoginData(generateUserWithEmptyPassAndWrongEmail());
+        clickLogin();
+    }
+    @Step
+    public void loginUserWithEmptyPassAndGoodEmail(){
+        fillLoginData(generateUserWithEmptyPassAndGoodEmail());
+        clickLogin();
+    }
     //-----------------------------------
     @Step
     public void verifyUserIsLogedIn(String fName, String lName){
@@ -69,5 +119,17 @@ public class LoginSteps {
         Assert.assertEquals(requiredEmailMessage,"This is a required field.");
         Assert.assertEquals(requiredPassMessage,"This is a required field.");
     }
+    @Step
+    public void displayMessageEmailMandatoryField(){
+        String requiredEmailMessage=loginPage.getRequiredEmailMessage();
+        Assert.assertEquals(requiredEmailMessage,"This is a required field.");
+    }
+    @Step
+    public void displayMessagePassMandatoryField(){
+        String requiredPasslMessage=loginPage.getRequiredPassMessage();
+        Assert.assertEquals(requiredPasslMessage,"This is a required field.");
+    }
+
+
 
 }
