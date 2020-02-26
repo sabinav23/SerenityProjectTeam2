@@ -2,6 +2,7 @@ package com.firestarters.page;
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
