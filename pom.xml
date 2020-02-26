@@ -48,6 +48,7 @@
             <version>2.0.81</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-junit</artifactId>
