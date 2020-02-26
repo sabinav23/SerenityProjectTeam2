@@ -1,6 +1,5 @@
 package com.firestarters.page;
 
-import com.firestarters.steps.AbstractPage;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
