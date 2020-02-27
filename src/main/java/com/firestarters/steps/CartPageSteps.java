@@ -12,10 +12,19 @@ public class CartPageSteps {
 
     //Ciuverca Ionut
     @Step
-    public void proceedToCheckout(){
-        assertEquals(2, cartPage.getNumberOfElementsFromCartProductsList());
+    public void proceedToCheckout(int expectedSize){
+        assertEquals(expectedSize, cartPage.getNumberOfElementsFromCartProductsList());
         cartPage.proceedToCheckout();
     }
+
+    @Step
+    public void proceedToCheckoutForVerify(){
+//        assertEquals(expectedSize, cartPage.getNumberOfElementsFromCartProductsList());
+        cartPage.proceedToCheckout();
+    }
+
+
+
 
     public void verifyIfProductTableIsDisplayed(){
         assertTrue(cartPage.getProductTable().isDisplayed());
