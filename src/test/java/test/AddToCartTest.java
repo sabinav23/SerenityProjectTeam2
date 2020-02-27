@@ -19,7 +19,6 @@ public class AddToCartTest extends BaseTest{
     public void addElementBySearching(){
         headerSteps.submitsInSearch();
         productListPage.selectAProduct();
-
     }
 
 

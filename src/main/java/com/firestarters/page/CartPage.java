@@ -15,6 +15,10 @@ public class CartPage extends  AbstractPage{
 
     @FindBy(css = "#shopping-cart-table > tbody")
     private WebElementFacade listOfProductsInCart;
+    @FindBy(css = ".product-cart-actions .link-wishlist")
+    private WebElementFacade wishlistBtnInCart;
+    @FindBy(css=".success-msg")
+    private WebElementFacade successMsgAddedInWishlist;
 
 
   //Ciuverca Ionut
@@ -28,5 +32,12 @@ public class CartPage extends  AbstractPage{
         proceedToCheckoutButton.click();
     }
 
+
+    public WebElementFacade getWishListBtnInCart(){
+        return wishlistBtnInCart;
+    }
+    public WebElementFacade getSuccessMsgAddedInWishlist(){
+        return successMsgAddedInWishlist;
+    }
 
 }

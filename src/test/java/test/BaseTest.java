@@ -3,6 +3,7 @@ package test;
 import net.thucydides.core.annotations.Managed;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.openqa.selenium.WebDriver;
 import com.firestarters.utils.Constants;
 
