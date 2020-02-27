@@ -73,9 +73,12 @@ public class HeaderPageTest extends BaseTest {
     }
 
     String word = "DRESS";
+   /*
     @Test
     public void submitInSearch(String word){
 
     }
+
+    */
 
 }
