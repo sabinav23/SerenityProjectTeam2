@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.Step;
 
 public class ProductSortingSteps {
 	
-	MainPage mainPage;
+	HomepageSteps mainPage;
 	MenTeesKnitsPage teesKnitsProductPage;
 	
 	
@@ -21,9 +21,26 @@ public class ProductSortingSteps {
 	}
 	
 	@Step
+	public void verifyDescendingSortByPrice() {
+		teesKnitsProductPage.clickSortByPriceOption();
+		teesKnitsProductPage.clickSortDirectionArrow();
+		Assert.assertTrue(teesKnitsProductPage.checkSortByPriceDescending());
+		
+	}
+
+	
+	@Step
 	public void verifyAscendingSortByName() {
 		teesKnitsProductPage.clickSortByNameOption();
 		Assert.assertTrue(teesKnitsProductPage.checkSortByNameAscending());
 	}
-
+	
+	@Step
+	public void verifyDescendingSortByName() {
+		teesKnitsProductPage.clickSortByNameOption();
+		teesKnitsProductPage.clickSortDirectionArrow();
+		Assert.assertTrue(teesKnitsProductPage.checkSortByNameDescending());
+		
+	}
+	
 }
