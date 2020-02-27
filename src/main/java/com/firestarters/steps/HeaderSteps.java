@@ -15,6 +15,12 @@ public class HeaderSteps {
         headerPage.navigateToAProductSubcategory();
     }
 
+    //Ciuverca Ionut
+    @Step
+    public void navigateToMenPantsSubcategory(){
+        headerPage.navigateToMenPantsSubcategory();
+    }
+
     @Step
     public void appearsOnHomepage() {
         Assert.assertEquals("Madison Island", headerPage.getTitle());
@@ -78,8 +84,5 @@ public class HeaderSteps {
     public void submitsInSearch() {
         headerPage.fillAndSubmitSearchField();
         Assert.assertTrue(headerPage.getSearchTitle().contains("DRESS"));
-
     }
-
-
 }

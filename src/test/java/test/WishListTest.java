@@ -21,15 +21,15 @@ public class WishListTest extends BaseTest {
     SearchPageSteps searchPageSteps;
 
     @Test
-    public void isLoginPageDisplayedWhenNotLoggedIn(){
+    public void checkLoginPageDisplayedWhenNotLoggedIn(){
         wishListSteps.clicksOnWishListBtnWhenNotLoggedIn();
     }
     @Test
-    public void isMyWishlistPageDisplayedWhenLoggedIn(){
+    public void verifyMyWishlistPageDisplayedWhenLoggedIn(){
         wishListSteps.clicksOnWishListWhenLoggedIn();
     }
     @Test
-    public void clickOnWishlistBtnInCart() {
+    public void verifyMsgAddedInWishListIsDisplayed() {
         loginSteps.navigateToLoginPage();
         loginSteps.loginUser();
         searchPageSteps.addProductFromSearch("dress", "dress");
