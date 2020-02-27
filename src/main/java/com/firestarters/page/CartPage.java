@@ -17,6 +17,9 @@ public class CartPage extends  AbstractPage{
     @FindBy(css = "#shopping-cart-table > tbody")
     private WebElementFacade listOfProductsInCart;
 
+    @FindBy ( css = "#shopping-cart-table" )
+    private WebElementFacade productTable;
+
     //Agota
     @FindBy(css="#shopping-cart-table>tbody>tr>td[class='product-cart-price']")
     private List<WebElementFacade> listOfProductPricesInCart;
@@ -41,6 +44,11 @@ public class CartPage extends  AbstractPage{
    //Ciuverca Ionut
     public void proceedToCheckout(){
         proceedToCheckoutButton.click();
+    }
+
+    public WebElementFacade getProductTable(){
+        return productTable;
+
     }
 
 
