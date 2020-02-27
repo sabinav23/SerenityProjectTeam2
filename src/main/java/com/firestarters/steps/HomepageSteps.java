@@ -22,4 +22,13 @@ public class HomepageSteps  {
     public void selectDetails(){
         productDetailsSteps.configureProductAndAddToCart();
     }
+    @Step
+    public void clickOnSaleSection() {
+    	homePage.clickOnSaleHeaderOption();
+    }
+    
+    @Step
+    public void clickOnMenSection() {
+   	 homePage.clickOnMenHeaderOption();
+    }
 }
