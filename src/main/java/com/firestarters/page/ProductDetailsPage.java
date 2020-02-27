@@ -18,18 +18,21 @@ public class ProductDetailsPage extends  AbstractPage {
     @FindBy(css = "div>.btn-cart")
     private WebElementFacade addToCartButton;
 
+    //Ciuverca Ionut
     public void selectAColor(){
         Random color = new Random();
         WebElementFacade randomColor = colorList.get(color.nextInt(colorList.size()));
         randomColor.click();
     }
 
+    //Ciuverca Ionut
     public void selectSize(){
         Random size = new Random();
         WebElement randomSize = sizeList.get(size.nextInt(sizeList.size()));
         randomSize.click();
     }
 
+    //Ciuverca Ionut
     public void addToCart(){
         addToCartButton.click();
     }

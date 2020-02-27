@@ -94,7 +94,7 @@ public class HeaderPage extends AbstractPage {
         return searchTitle.getText();
      }
 
-
+    //Ciuverca Ionut
     public void navigateToAProductSubcategory(){
         Actions action = new Actions(getDriver());
         action.moveToElement(category).perform();
