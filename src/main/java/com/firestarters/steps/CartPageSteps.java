@@ -9,6 +9,7 @@ public class CartPageSteps {
 
     CartPage cartPage;
 
+    //Ciuverca Ionut
     @Step
     public void proceedToCheckout(){
         assertEquals(2, cartPage.getNumberOfElementsFromCartProductsList());
@@ -16,3 +17,4 @@ public class CartPageSteps {
     }
 
 }
+

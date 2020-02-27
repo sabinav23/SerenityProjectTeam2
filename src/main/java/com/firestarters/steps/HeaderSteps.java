@@ -1,15 +1,16 @@
 package com.firestarters.steps;
 
-import com.firestarters.page.HeaderPage;
-import net.thucydides.core.annotations.Step;
-import org.junit.Assert;
+        import com.firestarters.page.HeaderPage;
+        import net.thucydides.core.annotations.Step;
+        import org.junit.Assert;
 
 public class HeaderSteps {
 
     HeaderPage headerPage;
 
+    //Ciuverca Ionut
     @Step
-    public void goToProductsPage(){
+    public void goToProductsPage() {
 
         headerPage.navigateToAProductSubcategory();
     }
@@ -25,7 +26,7 @@ public class HeaderSteps {
         Assert.assertEquals("http://qa2.dev.evozon.com/", headerPage.getURL());
         System.out.println(headerPage.getURL());
     }
-    
+
     @Step
     public void logoIsDisplayed() {
         Assert.assertTrue(headerPage.getLogo().isDisplayed());
@@ -69,12 +70,14 @@ public class HeaderSteps {
     }
 
     @Step
-    public void clearsSearchField(){
+    public void clearsSearchField() {
         headerPage.clearSearchField();
     }
 
     @Step
-    public void submitsInSearch(){
+    public void submitsInSearch() {
+        headerPage.fillAndSubmitSearchField();
+        Assert.assertTrue(headerPage.getSearchTitle().contains("DRESS"));
 
     }
 

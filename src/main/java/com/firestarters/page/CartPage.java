@@ -17,12 +17,13 @@ public class CartPage extends  AbstractPage{
     private WebElementFacade listOfProductsInCart;
 
 
-
+  //Ciuverca Ionut
     public int getNumberOfElementsFromCartProductsList(){
 
         return cartProductsList.size();
     }
 
+   //Ciuverca Ionut
     public void proceedToCheckout(){
         proceedToCheckoutButton.click();
     }

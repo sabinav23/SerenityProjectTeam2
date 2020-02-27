@@ -27,7 +27,6 @@ public class LoginSteps {
         user.setEmail("");
         user.setPass("");
         return user;
-
     }
     @Step
     public User generateUserWithEmptyEmailAndWrongPass(){

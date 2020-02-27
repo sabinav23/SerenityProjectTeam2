@@ -7,6 +7,7 @@ public class ProductPageSteps {
 
     ProductListPage productListPage;
 
+    //Ciuverca Ionut
     @Step
     public void selectAProduct(){
         productListPage.selectAProduct();

@@ -22,6 +22,7 @@ public class ProductDetailsSteps {
 //        productDetailsPage.addToCart();
 //    }
 
+    //Ciuverca Ionut ( here I grouped all the above)
     @Step
     public void configureProductAndAddToCart(){
         productDetailsPage.selectAColor();
