@@ -25,6 +25,7 @@ public class SearchPage extends AbstractPage {
 
 
 
+    //Ciuverca Ionut
     public void searchProduct(String productInput, String titleComparatorString){
         searchInput.clear();
         searchInput.type(productInput);
@@ -34,6 +35,7 @@ public class SearchPage extends AbstractPage {
         assertTrue(searchTitleString.contains(titleComparatorString));
     }
 
+    //Ciuverca Ionut
     public void addToCartProduct(){
         addToCartButton.click();
     }

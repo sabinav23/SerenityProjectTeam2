@@ -68,18 +68,20 @@ public class CheckoutPage extends  AbstractPage {
     @FindBy(css = ".page-title >h1")
     private WebElementFacade checkoutPageTitle;
 
+
     public WebElement getInputByTitle(String title){
         return getDriver().findElement(By.cssSelector("li.active input[title='" + title + "']"));
     }
 
+    //Ciuverca Ionut
     public void selectCheckoutMethod(){
         asGuestRadioButton.click();
     }
-
+    //Ciuverca Ionut
     public void continueToCheckout(){
         continueButton.click();
     }
-
+    //Ciuverca Ionut
     public void fillTheRequiredFieldsForBilling(){
         getInputByTitle("First Name").sendKeys("John");
         getInputByTitle("Middle Name/Initial").sendKeys("Dossse");
@@ -102,7 +104,7 @@ public class CheckoutPage extends  AbstractPage {
 
         withTimeoutOf(Duration.ofSeconds(5)).waitFor(shippingFirstNameLabel);
     }
-
+    //Ciuverca Ionut
     public void fillTheRequiredFieldsForShipping(){
         getInputByTitle("First Name").sendKeys("John");
         getInputByTitle("Last Name").sendKeys("Doe");
@@ -122,7 +124,7 @@ public class CheckoutPage extends  AbstractPage {
 
         withTimeoutOf(Duration.ofSeconds(10)).waitFor(flatRateLabel);
     }
-
+    //Ciuverca Ionut
     public void setShippingMethodPaymentAndPlaceOrder(){
         shippingMethodRadioButton.click();
         shippingMethodContinueButton.click();

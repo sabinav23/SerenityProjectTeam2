@@ -8,6 +8,7 @@ public class HeaderSteps {
 
     HeaderPage headerPage;
 
+    //Ciuverca Ionut
     @Step
     public void goToProductsPage() {
 
