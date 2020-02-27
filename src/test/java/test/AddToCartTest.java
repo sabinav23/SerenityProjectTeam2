@@ -29,7 +29,7 @@ public class AddToCartTest extends BaseTest{
    @Steps
    CartPageSteps cartPageSteps;
 
-
+    @Test
     public void TestIfProductIsAddedBySearching(){
    searchPageSteps.addProductFromSearch("dress", "dress");
    cartPageSteps.verifyIfProductTableIsDisplayed();
