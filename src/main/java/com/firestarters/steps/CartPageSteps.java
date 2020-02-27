@@ -29,40 +29,42 @@ public class CartPageSteps {
     @Step
     public void proceedToCheckoutForVerify() {
 //        assertEquals(expectedSize, cartPage.getNumberOfElementsFromCartProductsList());
+    }
+    @Step
         public void proceedToCheckout () {
             assertEquals(2, cartPage.getNumberOfElementsFromCartProductsList());
             cartPage.proceedToCheckout();
-        }
-
-        //Agota
-        @Step
-        public void verifyIfSubtotalIsCorrect () {
-            //product list
-            List<WebElementFacade> productList = cartPage.getProductList();
-            for (WebElementFacade product : productList) {
-                String price = product.findElement(By.cssSelector(" td[class='product-cart-price']")).getText();
-                String qty = product.findElement(By.cssSelector(" td[class='product-cart-actions']>input")).getAttribute("value");
-                String subtotal = product.findElement(By.cssSelector(" .product-cart-total>span span[class='price']")).getText();
-
-                Double correctPrice = convertStringToDouble(stringReplace(price));
-
-                System.out.println(correctPrice);
-                Double correctQty = convertStringToDouble(qty);
-                System.out.println(correctQty);
-                Double correctSubtotal = convertStringToDouble(stringReplace(subtotal));
-                System.out.println(correctSubtotal);
-
-                Assert.assertTrue(correctSubtotal.equals(correctPrice * correctQty));
-
-            }
-        }
-
-
-        @Step
-        public void verifyIfProductTableIsDisplayed () {
-            assertTrue(cartPage.getProductTable().isDisplayed());
-        }
-
     }
+
+    //Agota
+    @Step
+    public void verifyIfSubtotalIsCorrect() {
+        //product list
+        List<WebElementFacade> productList = cartPage.getProductList();
+        for (WebElementFacade product : productList) {
+            String price = product.findElement(By.cssSelector(" td[class='product-cart-price']")).getText();
+            String qty = product.findElement(By.cssSelector(" td[class='product-cart-actions']>input")).getAttribute("value");
+            String subtotal = product.findElement(By.cssSelector(" .product-cart-total>span span[class='price']")).getText();
+
+            Double correctPrice = convertStringToDouble(stringReplace(price));
+
+            System.out.println(correctPrice);
+            Double correctQty = convertStringToDouble(qty);
+            System.out.println(correctQty);
+            Double correctSubtotal = convertStringToDouble(stringReplace(subtotal));
+            System.out.println(correctSubtotal);
+
+            Assert.assertTrue(correctSubtotal.equals(correctPrice * correctQty));
+
+        }
+    }
+
+
+    @Step
+    public void verifyIfProductTableIsDisplayed() {
+        assertTrue(cartPage.getProductTable().isDisplayed());
+    }
+
 }
+
 
