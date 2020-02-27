@@ -1,5 +1,7 @@
 package com.firestarters.steps;
 
+import com.firestarters.page.CartPage;
+import com.firestarters.page.ProductListPage;
 import com.firestarters.page.WishListPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
@@ -12,6 +14,8 @@ public class WishListSteps extends ScenarioSteps {
 
     WishListPage wishListPage;
 
+    CartPage cartPage;
+
     @Steps
     HeaderSteps headerSteps;
 
@@ -19,7 +23,7 @@ public class WishListSteps extends ScenarioSteps {
     LoginSteps loginSteps;
 
     @Step
-    public void clicksOnWishListBtnWhenNotLoggedIn(){
+    public void clicksOnWishListBtnWhenNotLoggedIn() {
         headerSteps.clickOnAccountButton();
 
         wishListPage.getWishListBtn().click();
@@ -28,13 +32,29 @@ public class WishListSteps extends ScenarioSteps {
         Assert.assertEquals("http://qa2.dev.evozon.com/customer/account/login/", registerURL);
     }
 
-    public void clicksOnWishListWhenLoggedIn(){
+    @Step
+    public void clicksOnWishListWhenLoggedIn() {
         loginSteps.navigateToLoginPage();
         loginSteps.loginUser();
         headerSteps.clickOnAccountButton();
         wishListPage.getWishListBtn().click();
         String registerURL = getDriver().getCurrentUrl();
         Assert.assertEquals("http://qa2.dev.evozon.com/wishlist/", registerURL);
+    }
 
+    @Step
+    public void clickOnWishListBtninCart() {
+        cartPage.getWishListBtnInCart().click();
+    }
+
+
+    @Step
+    public String getMyWishPageSuccessMsg() {
+        return wishListPage.getSuccessMsg().getText();
+    }
+    public String getSuccesMsgAddedInWishlist(){
+        return cartPage.getSuccessMsgAddedInWishlist().getText();
     }
 }
+
+

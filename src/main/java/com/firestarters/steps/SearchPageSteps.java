@@ -14,5 +14,4 @@ public class SearchPageSteps {
         searchPage.addToCartProduct();
     }
 
-
 }

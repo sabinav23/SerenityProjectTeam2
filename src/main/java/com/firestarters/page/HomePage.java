@@ -15,6 +15,21 @@ public class HomePage extends AbstractPage {
 
     @FindBy ( css = ".widget-products ul li.item > a")
     private List<WebElementFacade> newProductsSectionList;
+    
+	@FindBy(css = ".nav-5.parent > a")
+	private WebElementFacade saleHeaderOption;
+
+	@FindBy(css = "li[class=\"level0 nav-2 parent\"]")
+	private WebElementFacade menHeaderOption;
+
+	public void clickOnMenHeaderOption() {
+		menHeaderOption.click();
+	}
+
+	public void clickOnSaleHeaderOption() {
+		saleHeaderOption.click();
+	}
+    
 
     public void selectRandomProductFromNewProductsOnHomepage(){
         Random productsSectionSize = new Random();
