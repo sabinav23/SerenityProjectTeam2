@@ -50,4 +50,10 @@ public class LoginTest extends BaseTest {
         loginSteps.loginUserWithEmptyPassAndGoodEmail();
         loginSteps.displayMessagePassMandatoryField();
     }
+    @Test
+    public void loginUserWithInvalidCredentials(){
+        loginSteps.navigateToLoginPage();
+        loginSteps.loginWithInvalidCredentials();
+        loginSteps.displayErrorMessage();
+    }
 }
