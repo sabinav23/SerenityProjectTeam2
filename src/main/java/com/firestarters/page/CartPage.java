@@ -5,7 +5,6 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
 import static com.firestarters.utils.Utils.*;
 
@@ -20,6 +19,13 @@ public class CartPage extends  AbstractPage{
 
     @FindBy(css = "#shopping-cart-table > tbody")
     private WebElementFacade listOfProductsInCart;
+    @FindBy(css = ".product-cart-actions .link-wishlist")
+    private WebElementFacade wishlistBtnInCart;
+    @FindBy(css=".success-msg")
+    private WebElementFacade successMsgAddedInWishlist;
+
+    @FindBy ( css = "#shopping-cart-table" )
+    private WebElementFacade productTable;
 
     //Agota
     @FindBy(css="#shopping-cart-table>tbody>tr")
@@ -38,6 +44,7 @@ public class CartPage extends  AbstractPage{
     public void proceedToCheckout(){
         proceedToCheckoutButton.click();
     }
+
     public List<WebElementFacade> getCartProductsList() {
         return cartProductsList;
     }
@@ -51,8 +58,23 @@ public class CartPage extends  AbstractPage{
         Double priceTotalAsDouble=convertStringToDouble(priceTotal1);
         return priceTotalAsDouble;
     }
+
     //return Product list from cart
     public List<WebElementFacade> getProductList() {
         return productList;
     }
+
+    public WebElementFacade getProductTable(){
+        return productTable;
+
+    }
+
+
+    public WebElementFacade getWishListBtnInCart(){
+        return wishlistBtnInCart;
+    }
+    public WebElementFacade getSuccessMsgAddedInWishlist(){
+        return successMsgAddedInWishlist;
+    }
+
 }

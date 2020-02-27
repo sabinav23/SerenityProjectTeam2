@@ -136,4 +136,34 @@ public class CheckoutPage extends  AbstractPage {
         assertTrue(checkoutPageTitle.isDisplayed());
 
     }
+
+    public void clickOnContinueButtonFromBilling(){
+        billingTabContinueButton.click();
+    }
+
+    public void clickOnContinueButtonFromShipping(){
+       shippingTabContinueButton.click();
+    }
+
+    public void clickOnShippingRadioButton(){
+        shippingMethodRadioButton.click();
+    }
+
+    public void clickOnShippingMethodContinueButton(){
+        shippingMethodContinueButton.click();
+    }
+
+    public void clickOnPaymentContinueButton(){
+        paymentContinueButton.click();
+    }
+
+    public void clickOnPlaceOrderButton(){
+        placeOrderButton.click();
+    }
+
+
+
+
+
+
 }
