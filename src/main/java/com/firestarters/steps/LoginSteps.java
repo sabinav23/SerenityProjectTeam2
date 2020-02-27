@@ -56,6 +56,12 @@ public class LoginSteps {
         user.setPass("");
         return user;
     }
+    public User generateNonRegeisteredUser(){
+        User user=new User();
+        user.setEmail("pampareu_roxana@yahoo.com");
+        user.setPass("pamparauroxana");
+        return user;
+    }
     //---------------------------------------
     @Step
     public void navigateToLoginPage(){
@@ -103,6 +109,11 @@ public class LoginSteps {
         fillLoginData(generateUserWithEmptyPassAndGoodEmail());
         clickLogin();
     }
+    @Step
+    public void loginWithInvalidCredentials(){
+        fillLoginData(generateNonRegeisteredUser());
+        clickLogin();
+    }
     //-----------------------------------
     @Step
     public void verifyUserIsLogedIn(String fName, String lName){
@@ -127,6 +138,11 @@ public class LoginSteps {
     public void displayMessagePassMandatoryField(){
         String requiredPasslMessage=loginPage.getRequiredPassMessage();
         Assert.assertEquals(requiredPasslMessage,"This is a required field.");
+    }
+    @Step
+    public void displayErrorMessage(){
+        String errorMessage=loginPage.getErrormessage();
+        Assert.assertEquals(errorMessage,"Invalid login or password.");
     }
 
 
