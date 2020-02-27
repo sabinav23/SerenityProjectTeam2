@@ -12,4 +12,10 @@ public class ProductPageSteps {
     public void selectAProduct(){
         productListPage.selectAProduct();
     }
+
+    //
+    @Step
+    public void selectAdToCompare(){
+        productListPage.clickOnAddToCompare();
+    }
 }

@@ -26,16 +26,21 @@ public class AddToCartTest extends BaseTest{
    @Steps
     ProductPageSteps productPageSteps;
 
+   @Steps
+   CartPageSteps cartPageSteps;
+
 
     @Test
     public void TestIfProductIsAddedBySearching(){
    searchPageSteps.addProductFromSearch("dress", "dress");
+   cartPageSteps.verifyIfProductTableIsDisplayed();
     }
 
     @Test
     public void TestIfProducIsAddedFromHomepage(){
         homepageSteps.selectProductFromNewProductsOnHomepage();
         homepageSteps.selectDetails();
+        cartPageSteps.verifyIfProductTableIsDisplayed();
     }
 
     @Test
@@ -43,6 +48,7 @@ public class AddToCartTest extends BaseTest{
         headerSteps.goToProductsPage();
         productPageSteps.selectAProduct();
         homepageSteps.selectDetails();
+        cartPageSteps.verifyIfProductTableIsDisplayed();
     }
 
 

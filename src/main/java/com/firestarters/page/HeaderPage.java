@@ -54,6 +54,10 @@ public class HeaderPage extends AbstractPage {
     @FindBy (css = " .page-title h1 ")
     private WebElementFacade searchTitle;
 
+    @FindBy(css = ".nav-2-4")
+    private WebElementFacade menPantsSubcategory;
+
+
     public WebElementFacade getLogo() {
         return logo;
     }
@@ -105,5 +109,11 @@ public class HeaderPage extends AbstractPage {
         return greetMessage.getText();
     }
 
+    //Ciuverca Ionut
+    public void navigateToMenPantsSubcategory(){
+        Actions action = new Actions(getDriver());
+        action.moveToElement(category).perform();
+        action.moveToElement(menPantsSubcategory).click().perform();
+    }
 
 }
