@@ -19,5 +19,11 @@ public class ProductSortingSteps {
 		Assert.assertTrue(teesKnitsProductPage.checkSortByPriceAscending());;
 		
 	}
+	
+	@Step
+	public void verifyAscendingSortByName() {
+		teesKnitsProductPage.clickSortByNameOption();
+		Assert.assertTrue(teesKnitsProductPage.checkSortByNameAscending());
+	}
 
 }

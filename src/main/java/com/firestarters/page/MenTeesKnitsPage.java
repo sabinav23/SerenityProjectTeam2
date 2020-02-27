@@ -17,15 +17,25 @@ public class MenTeesKnitsPage extends AbstractPage {
 	@FindBy(css="select[title=\"Sort By\"]")
 	private WebElementFacade sortBySelect;
 	
+	@FindBy(css=".product-name")
+	private List<WebElementFacade> productNameList;
+	
 	public void clickSortByPriceOption() {
 		sortBySelect.selectByVisibleText("Price");
+	}
+	
+	public void clickSortByNameOption() {
+		sortBySelect.selectByVisibleText("Name");
 	}
 	
 	public boolean checkSortByPriceAscending() {
 		boolean isCorrect = true;
 		
 		for(int i = 0; i < productPriceList.size()-1; i++) {
-			if(Double.valueOf(productPriceList.get(i).getText().replace("$", "")) > Double.valueOf(productPriceList.get(i + 1).getText().replace("$",""))) {
+			String product1 = productPriceList.get(i).getText().replace("$", "");
+			String product2 = productPriceList.get(i + 1).getText().replace("$", "");
+			
+			if(Double.valueOf(product1) > Double.valueOf(product2)) {
 				isCorrect = false;
 				return isCorrect;
 			}
@@ -33,6 +43,24 @@ public class MenTeesKnitsPage extends AbstractPage {
 		
 		return isCorrect;
 		
+	}
+	
+	public boolean checkSortByNameAscending() {
+		boolean isCorrect = true;
+		
+		for(int i = 0; i < productPriceList.size()-1; i++) {
+			String product1 = productNameList.get(i).getText(); 
+			String product2 = productNameList.get(i + 1).getText(); 
+			int comparisonResult = product1.compareTo(product2);
+			
+		      if(comparisonResult > 0) {
+		    	  isCorrect = false;
+				  return isCorrect;
+			}
+		}
+		
+		return isCorrect;
+			
 	}
 	
 	
