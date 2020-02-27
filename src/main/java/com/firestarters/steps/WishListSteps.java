@@ -9,9 +9,12 @@ import org.junit.Assert;
 
 
 public class WishListSteps extends ScenarioSteps {
+
     WishListPage wishListPage;
+
     @Steps
     HeaderSteps headerSteps;
+
     @Steps
     LoginSteps loginSteps;
 
