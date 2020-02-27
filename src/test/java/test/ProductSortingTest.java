@@ -27,7 +27,13 @@ public class ProductSortingTest extends BaseTest{
 		productSorting.verifyAscendingSortByPrice();
 	}
 	
-	
+	@Test
+	public void checkMenTeesAscendingNameSort() {
+		mainPageSteps.clickOnMenSection();
+		menPageSteps.selectTeesKnitsPolosCategory();
+		productSorting.verifyAscendingSortByName();
+		
+	}
 	
 
 }
