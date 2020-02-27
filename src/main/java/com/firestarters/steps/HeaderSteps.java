@@ -8,6 +8,7 @@ public class HeaderSteps {
 
     HeaderPage headerPage;
 
+    //Ciuverca Ionut
     @Step
     public void goToProductsPage() {
 
@@ -79,4 +80,6 @@ public class HeaderSteps {
         Assert.assertTrue(headerPage.getSearchTitle().contains("DRESS"));
 
     }
+
+
 }

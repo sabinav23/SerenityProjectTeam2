@@ -6,6 +6,12 @@ import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+
+/**
+ *
+ * @author ionutciuverca
+ *
+ */
 @RunWith(SerenityRunner.class)
 public class CheckoutTest extends BaseTest {
 
