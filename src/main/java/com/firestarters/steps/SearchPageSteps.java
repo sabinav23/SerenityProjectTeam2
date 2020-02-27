@@ -8,8 +8,10 @@ public class SearchPageSteps {
     SearchPage searchPage;
 
     @Step
-    public void addProductFromSearch(){
-        searchPage.searchProduct("Eye", "eye");
+    public void addProductFromSearch(String productInput, String titleComparatorString){
+        searchPage.searchProduct(productInput, titleComparatorString);
         searchPage.addToCartProduct();
     }
+
+
 }

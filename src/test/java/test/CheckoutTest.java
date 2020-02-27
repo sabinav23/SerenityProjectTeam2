@@ -32,7 +32,8 @@ public class CheckoutTest extends BaseTest {
         headerSteps.goToProductsPage();
         productPageSteps.selectAProduct();
         productDetailsSteps.configureProductAndAddToCart();
-        searchPageSteps.addProductFromSearch();
+        //give this params : // "Eye" and "eye"
+        searchPageSteps.addProductFromSearch("Eye", "eye");
         cartPageSteps.proceedToCheckout();
         checkoutPageSteps.selectCheckoutMethodAndContinue();
         checkoutPageSteps.completeTheCheckoutStepsAndPlaceOrder();
