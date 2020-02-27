@@ -25,15 +25,17 @@ public class SearchPage extends AbstractPage {
 
 
 
-    public void searchProduct(String product, String keyword){
+    //Ciuverca Ionut
+    public void searchProduct(String productInput, String titleComparatorString){
         searchInput.clear();
-        searchInput.type(product);
+        searchInput.type(productInput);
         searchSubmitButton.click();
         String searchTitleString = searchTitle.getText().toLowerCase();
         assertTrue(sortByLabel.isDisplayed());
-        assertTrue(searchTitleString.contains(keyword));
+        assertTrue(searchTitleString.contains(titleComparatorString));
     }
 
+    //Ciuverca Ionut
     public void addToCartProduct(){
         addToCartButton.click();
     }

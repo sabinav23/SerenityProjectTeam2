@@ -72,10 +72,9 @@ public class HeaderPageTest extends BaseTest {
         headerSteps.clearsSearchField();
     }
 
-    String word = "DRESS";
     @Test
-    public void submitInSearch(String word){
-
-    }
+    public void submitInSearch(){
+        headerSteps.submitsInSearch();
+   }
 
 }

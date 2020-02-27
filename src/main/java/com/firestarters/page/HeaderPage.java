@@ -2,6 +2,7 @@ package com.firestarters.page;
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -50,6 +51,8 @@ public class HeaderPage extends AbstractPage {
     @FindBy (css = " #search " )
     private WebElementFacade searchField;
 
+    @FindBy (css = " .page-title h1 ")
+    private WebElementFacade searchTitle;
 
     public WebElementFacade getLogo() {
         return logo;
@@ -60,6 +63,7 @@ public class HeaderPage extends AbstractPage {
     }
 
     public WebElementFacade getAccountButton() {
+
         return accountButton;
     }
 
@@ -81,18 +85,21 @@ public class HeaderPage extends AbstractPage {
         Assert.assertTrue( searchField.getText().isEmpty());
     }
 
-    public void fillSearchField(String word){
-        searchField.sendKeys(word);
+    public void fillAndSubmitSearchField() {
+        searchField.sendKeys("dress");
         searchField.submit();
-
     }
 
+    public String getSearchTitle() {
+        return searchTitle.getText();
+     }
+
+    //Ciuverca Ionut
     public void navigateToAProductSubcategory(){
         Actions action = new Actions(getDriver());
         action.moveToElement(category).perform();
         action.moveToElement(subcategory).click().perform();
     }
-
 
     public String getGreetMessage(){
         return greetMessage.getText();
