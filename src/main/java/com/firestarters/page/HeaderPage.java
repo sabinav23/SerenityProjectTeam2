@@ -68,6 +68,9 @@ public class HeaderPage extends AbstractPage {
     @FindBy(css = ".nav-primary > li")
     private List<WebElementFacade> navigationList;
 
+    @FindBy ( css = " #header-account .links >ul >li:first-child ")
+    private WebElementFacade myAccountButtonFromDropDown;
+
     public WebElementFacade getLogo() {
         return logo;
     }
@@ -144,6 +147,10 @@ public class HeaderPage extends AbstractPage {
        }
 
 
+    }
+
+    public void clickOnMyAccountButtonFromDropDown(){
+        myAccountButtonFromDropDown.click();
     }
 
 }

@@ -28,8 +28,9 @@ public class CartPageSteps {
 
     @Step
     public void proceedToCheckoutForVerify() {
-//        assertEquals(expectedSize, cartPage.getNumberOfElementsFromCartProductsList());
+        cartPage.proceedToCheckout();
     }
+
     @Step
         public void proceedToCheckout () {
             assertEquals(2, cartPage.getNumberOfElementsFromCartProductsList());

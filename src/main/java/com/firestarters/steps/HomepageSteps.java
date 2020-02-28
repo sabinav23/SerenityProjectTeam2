@@ -1,5 +1,7 @@
 package com.firestarters.steps;
 
+import org.junit.Assert;
+
 import com.firestarters.page.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
@@ -36,4 +38,17 @@ public class HomepageSteps  {
     public void clickOnWomenSection() {
     	homePage.womenHeaderOption();
     }
+    
+    @Step
+    public void testSubscriptionInput(String emailAddress, String expectedResult) {
+    	homePage.fillInNewsletterInput(emailAddress);
+    	homePage.clickNewsletterSubscribe();
+    	String actualResult = homePage.getSubscriptionSuccessMessage();
+    	Assert.assertTrue(actualResult.equals(expectedResult));
+    	
+    	
+    	
+    }
+    
+   
 }

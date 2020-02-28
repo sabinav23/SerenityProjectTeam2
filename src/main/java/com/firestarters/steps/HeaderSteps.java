@@ -92,4 +92,12 @@ public class HeaderSteps {
     public void navigateToACathegory(){
         headerPage.navigateToACathegory("WOMEN");
     }
+
+    @Step
+    public void clickOnAccountButtonFromDropDown(){
+        headerPage.clickOnMyAccountButtonFromDropDown();
+    }
+
+
+
 }
