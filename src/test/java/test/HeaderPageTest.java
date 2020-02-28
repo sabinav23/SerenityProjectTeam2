@@ -77,4 +77,8 @@ public class HeaderPageTest extends BaseTest {
         headerSteps.submitsInSearch();
    }
 
+   @Test
+    public void navigateToACathegory(){
+       headerSteps.navigateToACathegory();
+   }
 }

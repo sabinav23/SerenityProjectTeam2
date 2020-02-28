@@ -20,6 +20,13 @@ public class AddToCompareTest extends BaseTest {
     public void testIfAddToCompareConfirmationMessageAppears(){
         headerSteps.navigateToMenPantsSubcategory();
         productPageSteps.selectAdToCompare();
+
+    }
+
+    @Test
+    public void testIfCompareMenuAppears(){
+        headerSteps.navigateToMenPantsSubcategory();
+        productPageSteps.addToCompare();
     }
 
 }
