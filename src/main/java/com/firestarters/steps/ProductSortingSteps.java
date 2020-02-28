@@ -46,15 +46,6 @@ public class ProductSortingSteps {
 		
 	}
 	
-
-	
-	/*@Step
-	public void checkSortingByFirstPriceCategory() {
-		mainPage.clickOnWomenSection();
-		womenPage.clickOnTopsCategory();
-		topsAndBlouses.selectFirstPriceCategory();
-		Assert.assertTrue(topsAndBlouses.checkSortingByFirstPriceCategory());
-	}*/
 	
 
 	
