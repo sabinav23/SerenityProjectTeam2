@@ -59,6 +59,10 @@ public class CartPage extends  AbstractPage{
         return priceTotalAsDouble;
     }
 
+    public WebElement getTotalPrice() {
+        return totalPrice;
+    }
+
     //return Product list from cart
     public List<WebElementFacade> getProductList() {
         return productList;
