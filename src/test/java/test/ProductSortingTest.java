@@ -29,10 +29,7 @@ public class ProductSortingTest extends BaseTest{
 	
 	@Steps
 	TopsAndBlousesSteps topsAndBlousesSteps;
-	
 
-	
-	
 	@Test
 	public void checkMenTeesAscendingPriceSort() {
 		mainPageSteps.clickOnMenSection();
