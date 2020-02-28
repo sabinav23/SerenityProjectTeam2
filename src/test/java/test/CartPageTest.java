@@ -36,7 +36,6 @@ public class CartPageTest extends BaseTest{
        // webdriver.get("http://qa2.dev.evozon.com/checkout/cart/");
         //changes
         searchPageSteps.addProductFromSearch(searchProduct,text);
-        searchPageSteps.addProductFromSearch(searchProduct,text);
         cartPageSteps.verifyIfSubtotalIsCorrect();
     }
 }
