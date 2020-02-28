@@ -40,7 +40,7 @@ public class CheckoutTest extends BaseTest {
         productDetailsSteps.configureProductAndAddToCart();
         //give this params : // "Eye" and "eye"
         searchPageSteps.addProductFromSearch("Eye", "eye");
-        cartPageSteps.proceedToCheckout();
+        cartPageSteps.proceedToCheckout(2);
         checkoutPageSteps.selectCheckoutMethodAndContinue();
         checkoutPageSteps.completeTheCheckoutStepsAndPlaceOrder();
     }

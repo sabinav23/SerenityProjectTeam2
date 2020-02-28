@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 public class ProductListPage extends AbstractPage {
 
-    @FindBy(css = ".product-image[title*= 'Core']")
+    @FindBy(css = ".products-grid .product-image[title*= 'Core']")
     private WebElementFacade specificProduct;
 
     @FindBy(css = ".products-grid .item.last")
