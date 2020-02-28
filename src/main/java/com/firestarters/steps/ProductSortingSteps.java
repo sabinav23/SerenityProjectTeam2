@@ -4,6 +4,8 @@ import org.junit.Assert;
 
 import com.firestarters.page.MainPage;
 import com.firestarters.page.MenTeesKnitsPage;
+import com.firestarters.page.TopsAndBlousesPage;
+import com.firestarters.page.WomenPage;
 
 import net.thucydides.core.annotations.Step;
 
@@ -11,7 +13,8 @@ public class ProductSortingSteps {
 	
 	HomepageSteps mainPage;
 	MenTeesKnitsPage teesKnitsProductPage;
-	
+	WomenPage womenPage;
+	TopsAndBlousesPage topsAndBlouses;
 	
 	@Step
 	public void verifyAscendingSortByPrice() {
@@ -42,5 +45,17 @@ public class ProductSortingSteps {
 		Assert.assertTrue(teesKnitsProductPage.checkSortByNameDescending());
 		
 	}
+	
+
+	
+	/*@Step
+	public void checkSortingByFirstPriceCategory() {
+		mainPage.clickOnWomenSection();
+		womenPage.clickOnTopsCategory();
+		topsAndBlouses.selectFirstPriceCategory();
+		Assert.assertTrue(topsAndBlouses.checkSortingByFirstPriceCategory());
+	}*/
+	
+
 	
 }

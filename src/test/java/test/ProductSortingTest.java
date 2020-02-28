@@ -2,10 +2,13 @@ package test;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import com.firestarters.page.TopsAndBlousesPage;
 import com.firestarters.steps.HomepageSteps;
 import com.firestarters.steps.MainPageSteps;
 import com.firestarters.steps.MenPageSteps;
 import com.firestarters.steps.ProductSortingSteps;
+import com.firestarters.steps.TopsAndBlousesSteps;
+import com.firestarters.steps.WomenPageSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
@@ -20,6 +23,15 @@ public class ProductSortingTest extends BaseTest{
 	
 	@Steps
 	ProductSortingSteps productSorting;
+	
+	@Steps
+	WomenPageSteps womenPageSteps;
+	
+	@Steps
+	TopsAndBlousesSteps topsAndBlousesSteps;
+	
+
+	
 	
 	@Test
 	public void checkMenTeesAscendingPriceSort() {
@@ -51,6 +63,34 @@ public class ProductSortingTest extends BaseTest{
 		
 	}
 	
+	
+	@Test
+	public void checkSortingByFirstPriceCategory() {
+		mainPageSteps.clickOnWomenSection();
+		womenPageSteps.clickTopsAndBlousesCategory();
+		topsAndBlousesSteps.clickFirstPriceCategory();
+		topsAndBlousesSteps.checkFirstPriceCategorySorting();
+			
+	}
+	
+
+	@Test
+	public void checkSortingBySecondPriceCategory() {
+		mainPageSteps.clickOnWomenSection();
+		womenPageSteps.clickTopsAndBlousesCategory();
+		topsAndBlousesSteps.clickSecondPriceCategory();
+		topsAndBlousesSteps.checkSecondPriceCategorySorting();
+			
+	}
+	
+	@Test
+	public void checkSortingByThirdPriceCategory() {
+		mainPageSteps.clickOnWomenSection();
+		womenPageSteps.clickTopsAndBlousesCategory();
+		topsAndBlousesSteps.clickThirdPriceCategory();
+		topsAndBlousesSteps.checkThirdPriceCategorySorting();
+		
+	}
 	
 	
 	
