@@ -7,13 +7,21 @@ public class SearchPageSteps {
 
     SearchPage searchPage;
 
-//    public String searchWord, expectedWordInTitle;
+
 
     //Ciuverca Ionut
     @Step
     public void addProductFromSearch(String searchWord, String expectedWordInTitle){
-        searchPage.searchProduct(expectedWordInTitle, expectedWordInTitle);
+        searchPage.searchProduct(searchWord, expectedWordInTitle);
         searchPage.addToCartProduct();
     }
+
+    public String searchWord, expectedWordInTitle;
+    @Step
+    public void addProductFromSearchDDT(){
+        searchPage.searchProduct(searchWord, expectedWordInTitle);
+        searchPage.addToCartProduct();
+    }
+
 
 }
