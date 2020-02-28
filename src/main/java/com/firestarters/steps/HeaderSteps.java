@@ -85,4 +85,11 @@ public class HeaderSteps {
         headerPage.fillAndSubmitSearchField();
         Assert.assertTrue(headerPage.getSearchTitle().contains("DRESS"));
     }
+
+
+    //Ciuverca Ionut
+    @Step
+    public void navigateToACathegory(){
+        headerPage.navigateToACathegory("WOMEN");
+    }
 }
