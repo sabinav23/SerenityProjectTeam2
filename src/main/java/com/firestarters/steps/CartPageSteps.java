@@ -48,11 +48,11 @@ public class CartPageSteps {
 
             Double correctPrice = convertStringToDouble(stringReplace(price));
 
-            System.out.println(correctPrice);
+            //System.out.println(correctPrice);
             Double correctQty = convertStringToDouble(qty);
-            System.out.println(correctQty);
+            //System.out.println(correctQty);
             Double correctSubtotal = convertStringToDouble(stringReplace(subtotal));
-            System.out.println(correctSubtotal);
+            //System.out.println(correctSubtotal);
 
             Assert.assertTrue(correctSubtotal.equals(correctPrice * correctQty));
 
