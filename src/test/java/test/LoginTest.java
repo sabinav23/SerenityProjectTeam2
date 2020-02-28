@@ -2,6 +2,7 @@ package test;
 
 
 import com.firestarters.steps.LoginSteps;
+import com.firestarters.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
@@ -10,9 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 
-//@RunWith(SerenityRunner.class)
-@RunWith(SerenityParameterizedRunner.class)
-//@UseTestDataFrom(value = Constants.CSV_FILES_PATH + "Login.csv")
+@RunWith(SerenityRunner.class)
 public class LoginTest extends BaseTest {
     @Steps
     LoginSteps loginSteps;
