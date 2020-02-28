@@ -4,10 +4,12 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Random;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -57,6 +59,14 @@ public class HeaderPage extends AbstractPage {
     @FindBy(css = ".nav-2-4")
     private WebElementFacade menPantsSubcategory;
 
+    @FindBy(css = ".nav-4")
+    private WebElementFacade HomeAndDecorcategory;
+
+    @FindBy(css = ".nav-4-2")
+    private WebElementFacade bocksAndAudioSubcategory;
+
+    @FindBy(css = ".nav-primary > li")
+    private List<WebElementFacade> navigationList;
 
     public WebElementFacade getLogo() {
         return logo;
@@ -114,6 +124,26 @@ public class HeaderPage extends AbstractPage {
         Actions action = new Actions(getDriver());
         action.moveToElement(category).perform();
         action.moveToElement(menPantsSubcategory).click().perform();
+    }
+
+    public void navigateToAudioProducts(){
+        Actions action = new Actions(getDriver());
+        action.moveToElement(category).perform();
+        action.moveToElement(menPantsSubcategory).click().perform();
+    }
+
+    public void navigateToACathegory(String cathegory){
+
+
+        for(int i = 0; i < navigationList.size(); i++){
+            WebElementFacade ccathegory = navigationList.get(i);
+            if(ccathegory.getText().contains(cathegory)){
+                Actions action = new Actions(getDriver());
+                action.moveToElement(ccathegory).perform();
+            }
+       }
+
+
     }
 
 }

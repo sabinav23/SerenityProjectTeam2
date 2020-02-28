@@ -31,4 +31,9 @@ public class HomepageSteps  {
     public void clickOnMenSection() {
    	 homePage.clickOnMenHeaderOption();
     }
+    
+    @Step
+    public void clickOnWomenSection() {
+    	homePage.womenHeaderOption();
+    }
 }
