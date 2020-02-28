@@ -40,6 +40,7 @@ public class WishListSteps extends ScenarioSteps {
         wishListPage.getWishListBtn().click();
         String registerURL = getDriver().getCurrentUrl();
         Assert.assertEquals("http://qa2.dev.evozon.com/wishlist/", registerURL);
+
     }
 
     @Step
@@ -47,13 +48,17 @@ public class WishListSteps extends ScenarioSteps {
         cartPage.getWishListBtnInCart().click();
     }
 
-
     @Step
-    public String getMyWishPageSuccessMsg() {
-        return wishListPage.getSuccessMsg().getText();
-    }
     public String getSuccesMsgAddedInWishlist(){
         return cartPage.getSuccessMsgAddedInWishlist().getText();
+    }
+
+    @Step
+    public void updateQuantityOfInput(String newQuantity){
+        wishListPage.getQuantityInput().clear();
+        wishListPage.getQuantityInput().sendKeys(newQuantity);
+        wishListPage.getQuantityInput().submit();
+        wishListPage.getUpdateWishlistFromMyWishlist().click();
     }
 }
 

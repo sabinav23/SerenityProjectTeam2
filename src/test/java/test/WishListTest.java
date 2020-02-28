@@ -1,6 +1,5 @@
 package test;
-
-import com.firestarters.page.ProductListPage;
+import com.firestarters.steps.HeaderSteps;
 import com.firestarters.steps.LoginSteps;
 import com.firestarters.steps.SearchPageSteps;
 import com.firestarters.steps.WishListSteps;
@@ -20,6 +19,7 @@ public class WishListTest extends BaseTest {
     @Steps
     SearchPageSteps searchPageSteps;
 
+
     @Test
     public void checkLoginPageDisplayedWhenNotLoggedIn(){
         wishListSteps.clicksOnWishListBtnWhenNotLoggedIn();
@@ -28,6 +28,7 @@ public class WishListTest extends BaseTest {
     public void verifyMyWishlistPageDisplayedWhenLoggedIn(){
         wishListSteps.clicksOnWishListWhenLoggedIn();
     }
+
     @Test
     public void verifyMsgAddedInWishListIsDisplayed() {
         loginSteps.navigateToLoginPage();
@@ -35,6 +36,12 @@ public class WishListTest extends BaseTest {
         searchPageSteps.addProductFromSearch("dress", "dress");
         wishListSteps.clickOnWishListBtninCart();
         Assert.assertTrue(wishListSteps.getSuccesMsgAddedInWishlist().contains("moved to wishlist Wishlist"));
+    }
+    @Test
+    public void verifyQuantityOfproductInWishlistisUpdated(){
+        wishListSteps.clicksOnWishListWhenLoggedIn();
+        String newQuantity = "7";
+        wishListSteps.updateQuantityOfInput(newQuantity);
     }
 
 }
