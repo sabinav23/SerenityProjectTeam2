@@ -137,6 +137,10 @@ public class CheckoutPage extends  AbstractPage {
 
     }
 
+    public void clickOnDifferentAddressRadioButton(){
+        shipToDifferentAddressRadioButton.click();
+    }
+
     public void clickOnContinueButtonFromBilling(){
         billingTabContinueButton.click();
     }

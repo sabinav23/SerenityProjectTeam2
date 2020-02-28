@@ -49,8 +49,14 @@ public class AccountTest extends BaseTest {
         cartPageSteps.verifyIfProductTableIsDisplayed();
         cartPageSteps.proceedToCheckoutForVerify();
         accountSteps.checkoutAsUser();
+        accountSteps.checkIfOrderHasBeenSent();
+        accountSteps.getOrderNumber();
+        headerSteps.clickOnAccountButton();
+        headerSteps.clickOnAccountButtonFromDropDown();
+        accountSteps.clickMyOrdersButton();
+//        accountSteps.checkMyOrdersListIsCorrect();
 
-        //Trebuie sa continui cu un assert si sa verific my orders MAINE!!!
+
 
 
 
