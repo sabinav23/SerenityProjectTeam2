@@ -9,6 +9,7 @@ public class WomenPage extends AbstractPage {
 	@FindBy(css="img[alt=\"Tops & Blouses\"]")
 	private WebElementFacade topsAndBlousesCategory;
 
+	
 	public void clickOnTopsCategory() {
 		topsAndBlousesCategory.click();
 	}
